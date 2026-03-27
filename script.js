@@ -98,4 +98,4 @@ function renderizar() {
     const sol = document.getElementById('sol-central');
     if(total < 0) sol.classList.add('modo-buraco-negro'); else sol.classList.remove('modo-buraco-negro');
 }
-renderizar();
+rende...
