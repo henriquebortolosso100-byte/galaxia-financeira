@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Pro - Gestão Financeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="viewport">
+        <div class="hud">
+            <span id="relogio">00:00:00</span>
+        </div>
+
+        <button class="menu-botao" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div id="universo">
+            <!-- Raio de energia neon ligando os planetas -->
+            <div class="raio-energia"></div>
+
+            <div id="sol-central" class="corpo-celeste sol-central">
+                <span id="valor-sol">R$ 0</span>
+                <small id="label-sol">SALDO TOTAL</small>
+            </div>
+
+            <!-- Terra (Direita) -->
+            <div class="sistema-fixo terra-pos">
+                <div class="corpo-celeste planeta-terra">
+                    <span class="label-p">TERRA</span>
+                    <b id="val-lucro" class="v-p">R$ 0</b>
+                </div>
+                <div class="container-luas" id="luas-lucro"></div>
+            </div>
+
+            <!-- Marte (Esquerda) -->
+            <div class="sistema-fixo marte-pos">
+                <div class="corpo-celeste planeta-marte">
+                    <span class="label-p">MARTE</span>
+                    <b id="val-gasto" class="v-p">R$ 0</b>
+                </div>
+                <div class="container-luas" id="luas-gasto"></div>
+            </div>
+        </div>
+
+        <div class="menu-overlay" id="menuPrincipal">
+            <button onclick="toggleMenu()" class="btn-fechar">X</button>
+            <div class="menu-corpo">
+                <input type="text" id="nome" placeholder="Nome do Astro">
+                <input type="number" id="valor" placeholder="R$ Valor">
+                <select id="freq">
+                    <option value="fixo">Fixo (Planeta)</option>
+                    <option value="variável">Variável (Lua)</option>
+                </select>
+                <div class="grid-btns">
+                    <button onclick="addAstro('lucro')" class="btn-l">+ TERRA</button>
+                    <button onclick="addAstro('gasto')" class="btn-g">+ MARTE</button>
+                </div>
+                <div id="lista-gestao"></div>
+            </div>
+        </div>
+
+        <div class="zoom-controles">
+            <button onclick="mudarZoom(0.1)">+</button>
+            <button onclick="mudarZoom(-0.1)">-</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
